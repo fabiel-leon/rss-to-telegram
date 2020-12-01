@@ -28,7 +28,11 @@ rssToTelegram({
   cron: "*/15 * * * * *", // publish every 15 seconds, cron sintaxis
   timezone: "America/Havana", // your defined timezone
   // rss source
-  source: "https://feed.informer.com/digests/ZO8A5LZCGA/feeder.rss",
+  source: "https://feed.informer.com/digests/ZO8A5LZCGA/feeder.rss", // can be an async function or and array of objects
+  // source: async () => {
+  //   return db.get({ limit: 10 }); // your custom db
+  // },
+  // source: [{colo:"red"}],
   // add new fields to show in the message
   preprocess: async (item) => {
     item.color = "green";
@@ -37,7 +41,7 @@ rssToTelegram({
   template:
     'Color is {{color}}, <a href="{{image}}"> </a> <b><a href="{{link}}">{{title}}</a></b>\n @{{channel}}',
   // filter news of the day, use this function to filter already published posts
-  filter: async ({ date }) => {
+  filter: async ({ date }) => { // async functtion
     // must be async
     const d = new Date();
     return (
@@ -46,6 +50,8 @@ rssToTelegram({
       date.getFullYear() === d.getFullYear()
     );
   },
+  // add extra common fields to all items,
+  extraFields: { colo: "red", line: "stroke" }, // add line field to all items and overwrite color field
 });
 ```
 

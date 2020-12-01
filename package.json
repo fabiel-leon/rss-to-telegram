@@ -10,7 +10,22 @@
     "type": "git",
     "url": "git+https://github.com/fabiel-leon/rss-to-telegram.git"
   },
-  "keywords": [],
+  "keywords": [
+    "rss",
+    "telegram",
+    "cron",
+    "timezone",
+    "publish",
+    "messages",
+    "channel",
+    "template",
+    "handlebars",
+    "bot",
+    "filter",
+    "telegram preview",
+    "telegram bot",
+    "fabiel-leon"
+  ],
   "author": "Fabiel Leon <fabiel.leon.oliva@gmail.com>",
   "license": "ISC",
   "bugs": {

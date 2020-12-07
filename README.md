@@ -36,6 +36,7 @@ rssToTelegram({
   // add new fields to show in the message
   preprocess: async (item) => {
     item.color = "green";
+    return item;
   },
   // define you own message template
   template:
@@ -95,7 +96,10 @@ use the preprocess function to add fields, then modify the template to show the 
 ```javascript
 rssToTelegram({
 ...
- preprocess: async (item) => { item.color = "green"; },
+ preprocess: async (item) => {
+   item.color = "green";
+   return item; 
+ },
  template: 'Color is {{color}}, Link is {{link}}, Title is {{title}} \n @{{channel}}',
 ...
 })

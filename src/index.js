@@ -12,7 +12,7 @@ module.exports = ({
   cron = '00 00 06 * * *',
   timezone = 'America/Havana',
   filter,
-  template = '<a href="{{image}}"> </a> <b><a href="{{link}}">{{title}}</a></b>\n @{{channel}}',
+  template = '<a href="{{image}}"> </a> <b><a href="{{link}}">{{title}}</a></b>\n{{channel}}',
   preprocess,
   disablePreview = false,
   extraFields = {},

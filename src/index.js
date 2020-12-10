@@ -45,10 +45,10 @@ module.exports = ({
         const compiled = handlebars.compile(template);
         return telegram(bot, channel, compiled({ ...item, ...extraFields }), disablePreview);
       });
+      console.log('finished', result);
     } catch (error) {
       console.error(error);
     }
-    console.log('finished', result);
   },
   null,
   true,
